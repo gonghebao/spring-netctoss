@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+
+<mapper namespace="cn.tedu.netctoss.dao.AdminDAO">
+<!-- 
+	id:要求唯一,可以称之为sqlId。
+	parameterType:参数类型，
+	 	要写类的完整的名字。
+ -->
+	<select id="findByCode" parameterType="string" resultType="cn.tedu.netctoss.entity.Admin">
+		select admin_id adminId,admin_code adminCode,password,name,telephone,email,enrolldate
+		 from ghb_admin_info where ADMIN_CODE=#{str1}
+	</select>
+	<!--  -->
+</mapper>
